@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpeg" href="{{ url_for('static', filename='logo.jpg') }}">
+    <title>Skill Swap Form</title>
+    <link rel="stylesheet" href="../static/css/form-style.css">
+</head>
+<body>
+    <h1 class="form-title">Register Your Profile</h1>
+
+    <!-- Display error message if it exists -->
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    <form action="/" method="POST" class="registration-form">
+        <label for="name" class="form-label">Name:</label>
+        <input type="text" id="name" name="name" class="form-input" required><br>
+
+        <label for="skills" class="form-label">Skills:</label>
+        <textarea id="skills" name="skills" class="form-textarea" required></textarea><br>
+
+        <label for="purpose" class="form-label">Interested in:</label>
+        <input type="text" id="purpose" name="purpose" class="form-input" required><br>
+
+        <label for="contact" class="form-label">Contact:</label>
+        <input type="text" id="contact" name="contact" class="form-input" required><br>
+
+        <label for="profile_picture" class="form-label">Profile Picture URL:</label>
+        <input type="text" id="profile_picture" name="profile_picture" class="form-input"><br>
+
+        <label for="email" class="form-label">Email:</label>
+        <input type="email" id="email" name="email" class="form-input" required><br>
+
+        <label for="password" class="form-label">Password:</label>
+        <input type="password" id="password" name="password" class="form-input" required><br>
+
+        <button type="submit" class="form-button">Register</button>
+    </form>
+
+    <p class="login-text">Already have an account? 
+        <a href="/login" class="login-link" style="text-decoration: none; color: rgb(255, 0, 208); font-weight: 600;">Login here</a>
+    </p>
+</body>
+</html>

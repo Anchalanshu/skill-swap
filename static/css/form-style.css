@@ -1,0 +1,121 @@
+body {
+    display: flex;
+    background-image: url(../images/login.png);
+    background-size: cover; /* Ensures the image covers the entire viewport */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    min-height: 100vh; /* Make sure it fills the full height of the viewport */
+    margin: 0; /* Remove default margin */
+    font-family: Arial, sans-serif; /* Set font style */
+}
+
+
+.form-title {
+    margin-bottom: 20px; /* Space between title and form */
+    font-size: 2em; /* Title size */
+}
+
+.registration-form {
+    display: flex;
+    flex-direction: column; /* Stack form elements vertically */
+    width: 40%; /* Fixed width for the form */
+    padding: 20px; /* Padding inside the form */
+    border: 2px solid black; /* Black border */
+    border-radius: 8px; /* Rounded corners */
+    background-color: rgba(249, 249, 249, 0.5); /* Semi-transparent background */
+    backdrop-filter: blur(-20px); /* Apply blur effect */
+    align-items: center; /* Center items vertically */
+}
+
+
+
+
+.form-label {
+    margin-bottom: 5px; /* Space between label and input */
+    font-weight: bold; /* Bold labels */
+}
+
+.form-input, .form-textarea {
+    padding: 10px; /* Padding inside inputs */
+    margin-bottom: 15px; /* Space between inputs */
+    border: 1px solid #ccc; /* Border around inputs */
+    border-radius: 4px; /* Rounded corners */
+    width: 50%; /* Full width */
+}
+
+.form-textarea {
+    width: 50%; /* Fixed height for textarea */
+}
+
+.form-button {
+    padding: 10px; /* Padding for button */
+    background-color: #4CAF50; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1em; /* Button font size */
+}
+
+.form-button:hover {
+    background-color: #45a049; /* Darker shade on hover */
+}
+
+/* Form container styling */
+.login-form-container {
+    width: 20%; /* Adjust the width as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    height: auto; /* Adjust the height as needed */
+    margin: 150px auto; /* Center the form horizontally and add margin from the top */
+    padding: 40px 20px; /* Add padding inside the box */
+    border: 2px solid black; /* Black border */
+    border-radius: 8px; /* Rounded corners */
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent background */
+    backdrop-filter: blur(-20px); /* Apply blur effect */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+}
+
+
+/* Title styling */
+.login-form-title {
+    text-align: center; /* Center the title */
+    margin-bottom: 20px; /* Space below the title */
+}
+
+/* Label styling */
+.login-form-label {
+    display: block; /* Make labels block-level elements */
+    margin-bottom: 5px; /* Space below each label */
+}
+
+/* Input styling */
+.login-form-input {
+    width: 90%; /* Full width */
+    padding: 10px; /* Padding inside input */
+    margin-bottom: 15px; /* Space below inputs */
+    /* border: 1px solid #ccc; */
+    backdrop-filter: blur;
+    border-radius: 4px; /* Rounded corners */
+}
+
+/* Button styling */
+.login-form-button {
+    width: 100%; /* Full width */
+    padding: 10px; /* Padding inside button */
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Button hover effect */
+.login-form-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+

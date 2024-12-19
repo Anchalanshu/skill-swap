@@ -1,0 +1,538 @@
+body {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    min-height: 100vh; /* Make sure it fills the full height of the viewport */
+    margin: 0; /* Remove default margin */
+}
+
+
+nav {
+    background: linear-gradient(135deg, rgba(87, 241, 215, 1), #28a745, #00d0ff);
+    width: 100%; /* Make nav take full width */
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color: white; /* Adjust text color for contrast */
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle metallic edge */
+    z-index: 1;
+    position: fixed;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a light shadow */
+  }
+  
+
+
+/* <!------------------------------------------------------MAIN-----------------------------------------> */
+/* Main Container - Flexbox Layout */
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    height: calc(100vh); /* Full height minus navbar height */
+    
+    margin-top: 100px; /* Ensure content starts below the navbar */
+}
+
+/* Left Section - Fixed */
+.left-section {
+    width: 25%;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    background-color: #f4f4f4;
+    padding: 20px;
+    height: calc(100vh); /* Full height minus navbar height */
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    overflow-y: auto; /* Ensure scroll if content overflows */
+}
+
+.left-section h3 {
+    margin-top: 0;
+    margin: 120px 0px 20px 0px;
+}
+
+/* Center Section - Scrollable */
+.center-section {
+    flex-grow: 1;
+    margin-left: 270px; /* Add space for the fixed left section */
+    margin-right: 270px; /* Add space for the fixed right section */
+    padding: 20px;
+    margin: -120px 350px 0px 24% !important;
+    overflow-y: auto;
+    height: calc(100vh - 56px); /* Full height minus navbar height */
+}
+
+.center-section h2 {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.center-section .post {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.center-section .post h4 {
+    margin: 0 0 10px;
+}
+
+/* Right Section - Fixed */
+.right-section {
+    width: 23% !important;
+    margin-top: 100px !important;
+    position: fixed;
+    top: 0px;
+    right: 0;
+    height: calc(100vh - 56px) !important; /* Full height minus navbar height */
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    overflow-y: auto; /* Ensure scroll if content overflows */
+}
+
+.right-section h3 {
+    margin-top: 0;
+}
+
+
+
+/* -------------------------------------------------------LEFT SECTION---------------------------------------------- */
+/* Left Section Styles */
+.left-section {
+    padding: 20px;
+}
+
+.profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+    width: 100%;
+    height: 215px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-10px); /* Hover effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Hover shadow */
+}
+
+.profile-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* Round image */
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+.profile-info {
+    text-align: center;
+}
+
+.profile-info h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.profile-info p {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+
+
+.follow-btn:hover {
+    background-color: #005f8d; /* Darker LinkedIn blue */
+}
+
+/* Additional Button Styles */
+/* Message Button Styles */
+.message-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #333; /* Dark text color */
+    background-color: white;
+    border: 2px solid #ddd; /* Light border color */
+    border-radius: 50px;
+    cursor: pointer;
+    margin-left: 10px; /* Space between buttons */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, border 0.3s;
+}
+
+.message-btn i {
+    margin-right: 5px; /* Space between icon and text */
+}
+
+/* Hover Effect for the Message Button */
+.message-btn:hover {
+    background-color: #f1f1f1; /* Light gray background on hover */
+    border-color: #ccc; /* Change border color on hover */
+}
+
+.connect-btn{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.4); /* Black with opacity */
+    overflow: auto; /* Enable scroll if needed */
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    border-radius: 10px;
+}
+
+.close-btn {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#messageInput {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#sendMessageBtn {
+    padding: 10px 20px;
+    background-color: #0073b1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#sendMessageBtn:hover {
+    background-color: #005f8d;
+}
+
+
+.common-btn{
+    background: linear-gradient(135deg,  #ffffff, #0fffb7);
+    color: rgb(0, 0, 0);
+    width: 120px !important;
+    border-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.common-btn:hover{
+    background: linear-gradient(135deg, #ffffff, #00d0ff); /* Reverse gradient */
+    box-shadow: 0 4px 6px rgba(0, 128, 128, 0.3); /* Enhanced shadow */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+
+.sendmsg{
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #ffffff, #0fffb7);
+    color: rgb(0, 0, 0);
+    width: 200px !important;
+    margin-left: 260px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.4); /* Black with opacity */
+    overflow: auto; /* Enable scroll if needed */
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50% !important;
+    border-radius: 10px;
+}
+
+
+
+.close-btn {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+
+
+/* -------------------------------------------------------------------------------------Center Section: Posts----------------------------------------------------------------------------------- */
+.center-section {
+    width: 50%;
+    margin: -120px 0px 0px 24%;
+    padding: 10px;
+    height: 100vh;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+}
+
+/* Post Card */
+.post-card {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 50px 0px 0px 0px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.post-profile-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.post-header h4 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.post-header p {
+    margin: 0;
+    font-size: 12px;
+    color: #888;
+}
+
+.post-content p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.post-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.post-actions button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(115, 190, 255);
+    color: #000000;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.post-actions button:hover {
+    background-color: #0056b3;
+}
+
+/* Project Image Section */
+.post-image {
+    text-align: center;
+    margin-bottom: 15px; /* Space between image and text */
+}
+
+.project-photo {
+    width: 100%;        /* Make the image responsive */
+    margin-left: 25%;
+    max-width: 400px;   /* Maximum width of the image */
+    height: auto;       /* Keep the aspect ratio */
+    border-radius: 8px; /* Rounded corners for the image */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+
+/* Comment Section */
+.comment-section {
+    margin-top: 10px;
+}
+
+.comment-box {
+    width: 100%;
+    resize: none;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+/*---------------------------------------------------------------------------- General Right Section Styling------------------------------------------------------------------------------------------ */
+.right-section {
+    width: 45%;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.right-section h3 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.project-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project-img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border-radius: 50%;
+}
+
+.project-info {
+    text-align: center;
+    width: 100%;
+}
+
+.project-info h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.project-info p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.project-btns {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.join-btn,
+.details-btn {
+    padding: 8px 20px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.join-btn {
+    background: linear-gradient(135deg, #ffffff, #0fffb7);
+    color: rgb(0, 0, 0);
+}
+
+.join-btn:hover{
+    background: linear-gradient(135deg, #ffffff, #00d0ff); /* Reverse gradient */
+    box-shadow: 0 4px 6px rgba(0, 128, 128, 0.3); /* Enhanced shadow */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+.details-btn {
+    background-color: #2196F3;
+    color: white;
+}
+
+.join-btn:hover {
+    background-color: #45a049;
+}
+
+.details-btn:hover {
+    background-color: #0b7dda;
+}
+
+.posted-by {
+    font-size: 12px;
+    color: #777;
+    margin-top: 10px;
+}
+
+/* When Join button is clicked */
+.join-btn.clicked {
+    background-color: #ADD8E6; /* Light blue */
+    color: #333;
+}
+
+.join-btn.clicked:active {
+    background-color: #A0C8D5; /* Slightly darker shade on click */
+}
