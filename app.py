@@ -3,17 +3,24 @@ from werkzeug.security import generate_password_hash, check_password_hash  # For
 import mysql.connector
 import sqlite3
 import bcrypt
+from dotenv import load_dotenv
+import os
 
-app = Flask(__name__,static_folder='static')
+# Load environment variables from .env file
+load_dotenv()
 
-# Database connection setup
+app = Flask(__name__, static_folder='static')
+
+# Database connection setup using values from .env file
 conn = mysql.connector.connect(
-    host="localhost",
-    user="anand",
-    password="anandkhushi@2407",
-    database="skill_swap_db"
+    host=os.getenv("MYSQL_HOST"),
+    user=os.getenv("MYSQL_USER"),
+    password=os.getenv("MYSQL_PASSWORD"),
+    database=os.getenv("MYSQL_DB")
 )
 cursor = conn.cursor()
+
+
 
 # Route for form page
 @app.route('/')
