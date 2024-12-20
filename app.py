@@ -11,18 +11,17 @@ load_dotenv()
 
 app = Flask(__name__)
 
+# Initialize the database connection if it's not already initialized
+def init_db():
+    global conn, cursor
+    if 'conn' not in globals() or conn is None:  # Check if conn is already initialized
+        try:
+            conn = mysql.connector.connect(**db_config)  # Connect using the parsed URL
+            cursor = conn.cursor()  # Create a cursor object to interact with the database
+            print("Database connection established successfully!")
+        except mysql.connector.Error as err:
+            print(f"Error: {err}")  # Print the error message if connection fails
 
-try:
-    conn = mysql.connector.connect(
-        host=os.getenv("MYSQL_HOST"),         # Fetch MySQL host from .env
-        user=os.getenv("MYSQL_USER"),         # Fetch MySQL user from .env
-        password=os.getenv("MYSQL_PASSWORD"), # Fetch MySQL password from .env
-        database=os.getenv("MYSQL_DB")        # Fetch MySQL database name from .env
-    )
-    cursor = conn.cursor()  # Create a cursor object to interact with the database
-    print("Database connection established successfully!")  # Debug message for success
-except mysql.connector.Error as err:
-    print(f"Error: {err}")  # Print the error message if connection fails  
 
 @app.route('/test_db')
 def test_db():
