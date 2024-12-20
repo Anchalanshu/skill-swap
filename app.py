@@ -1,23 +1,58 @@
 from flask import Flask, render_template, request, redirect
 from werkzeug.security import generate_password_hash, check_password_hash  # For hashing passwords
 import mysql.connector
-import sqlite3
-import bcrypt
 from dotenv import load_dotenv
 import os
+import bcrypt
+from urllib.parse import urlparse
 
 # Load environment variables from .env file
 load_dotenv()
 
-app = Flask(__name__, static_folder='static')
+app = Flask(__name__)
 
-# Database connection setup using values from .env file
-conn = mysql.connector.connect(
-    host=os.getenv("MYSQL_HOST"),
-    user=os.getenv("MYSQL_USER"),
-    password=os.getenv("MYSQL_PASSWORD"),
-    database=os.getenv("MYSQL_DB")
-)
+
+try:
+    conn = mysql.connector.connect(
+        host=os.getenv("MYSQL_HOST"),         # Fetch MySQL host from .env
+        user=os.getenv("MYSQL_USER"),         # Fetch MySQL user from .env
+        password=os.getenv("MYSQL_PASSWORD"), # Fetch MySQL password from .env
+        database=os.getenv("MYSQL_DB")        # Fetch MySQL database name from .env
+    )
+    cursor = conn.cursor()  # Create a cursor object to interact with the database
+    print("Database connection established successfully!")  # Debug message for success
+except mysql.connector.Error as err:
+    print(f"Error: {err}")  # Print the error message if connection fails  
+
+@app.route('/test_db')
+def test_db():
+    try:
+        cursor.execute("SHOW TABLES;")  # Example SQL command
+        tables = cursor.fetchall()  # Fetch the list of tables
+        return f"Connected to the database! Tables: {tables}"
+    except Exception as e:
+        return f"Database connection error: {e}"
+
+
+# Parse the DATABASE_URL environment variable
+db_url = os.getenv("DATABASE_URL")
+if not db_url:
+    raise ValueError("DATABASE_URL environment variable is not set!")
+
+parsed_url = urlparse(db_url)
+
+# Extract database connection details
+db_config = {
+    "host": parsed_url.hostname,
+    "user": parsed_url.username,
+    "password": parsed_url.password,
+    "database": parsed_url.path[1:],  # Remove leading '/'
+    "port": parsed_url.port or 3306,  # Default to 3306 if port is not specified
+}
+
+# Establish database connection
+conn = mysql.connector.connect(**db_config)
+
 cursor = conn.cursor()
 
 
