@@ -1,3 +1,5 @@
+
+
 // Select the buttons
 const likeBtn = document.querySelector('.like-btn-custom');
 const commentBtn = document.querySelector('.comment-btn');
