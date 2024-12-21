@@ -1,10 +1,9 @@
 body {
-  display: flex;
-  flex-direction: column; /* Stack items vertically */
-  align-items: center; /* Center items horizontally */
-  min-height: 100vh; /* Ensure the body takes up the full height of the viewport */
-  margin: 0; /* Remove default margin */
-  font-family: Arial, sans-serif; /* Ensure a consistent font */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    min-height: 100vh; /* Make sure it fills the full height of the viewport */
+    margin: 0; /* Remove default margin */
 }
 
 
@@ -303,63 +302,135 @@ body {
 
 /*---------------------------------------------------------------------------NAV BAR-----------------------------------------------------------*/
 
-/* Default styles - Desktop and larger screens */
 nav {
   background: linear-gradient(135deg, rgba(87, 241, 215, 1), #28a745, #00d0ff);
-  width: 100%;
+  width: 100%; /* Make nav take full width */
   display: flex;
   align-items: center;
   padding: 10px;
-  color: white;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  color: white; /* Adjust text color for contrast */
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle metallic edge */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a light shadow */
 }
 
+
 nav ul {
-  list-style-type: none;
+  list-style-type: none; /* Remove bullet points */
   margin: 0;
   padding: 0;
-  display: flex;
-  gap: 20px;
-  align-items: center;
+  display: flex; /* Arrange items in a row */
+  gap: 20px; /* Space between items */
+  align-items: center; /* Vertically center items */
 }
 
 nav ul li {
-  white-space: nowrap;
+  white-space: nowrap; /* Prevent text from wrapping */
 }
 
 nav ul li a {
-  color: #fff;
-  font-size: 16px;
-  font-weight: 600;
-  text-decoration: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  transition: all 0.3s ease;
+  display: inline-block; /* Keep link content in one line */
+  color: #fff; /* White text color */
+  font-size: 16px; /* Adjust font size */
+  font-weight: 600; /* Make text slightly bold */
+  text-decoration: none; /* Remove underline */
+  padding: 10px 15px; /* Add space around links */
+  border-radius: 5px; /* Rounded corners */
+  transition: all 0.3s ease; /* Smooth hover effect */
 }
 
+/* Hover effect for links */
 nav ul li a:hover {
-  background: rgba(255, 255, 255, 0.2);
-  color: #57f1d7;
-  transform: scale(1.1);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
+  background: rgba(255, 255, 255, 0.2); /* Translucent hover background */
+  color: #57f1d7; /* Blue text color on hover */
+  transform: scale(1.1); /* Slightly enlarge text */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+  cursor: pointer; /* Pointer cursor for interactivity */
 }
+
+
+
+
+
+.dropdown-content {
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
 
 .side-nav {
   display: flex;
   justify-content: flex-end;
-  gap: 10px;
+  gap: 10px; /* Same spacing as Search and Filter buttons */
   align-items: center;
   width: 18.5%;
 }
 
+.styled-button {
+  padding: 8px 15px;
+  font-size: 14px;
+  background: linear-gradient(135deg, #d7f8ff, #94fff4); /* Gradient for modern look */
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 25px; /* Match input styling */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth hover effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.styled-button:hover {
+  background: linear-gradient(135deg, #008080, #00d0ff); /* Reverse gradient */
+  box-shadow: 0 4px 6px rgba(0, 128, 128, 0.3); /* Enhanced shadow */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+
+
+.dropdown-content {
+    display: none; /* Initially hide dropdown */
+    position: absolute; /* Position it absolutely relative to the button */
+    background-color: white; /* Background for dropdown */
+    border: 1px solid #ccc; /* Border for dropdown */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    z-index: 1; /* Ensure dropdown is above other content */
+}
+
+.dropdown-content a {
+    display: block; /* Block display for dropdown links */
+    padding: 10px; /* Padding for dropdown items */
+    color: black; /* Text color */
+    text-decoration: none; /* Remove underline */
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1; /* Change background on hover */
+}
+
+.button-container:hover .dropdown-content {
+    display: block; /* Show dropdown when hovering over button container */
+}
+
+
+/* Search Container Styling */
 .search-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  width: 100%;
+  display: flex; /* Align children horizontally */
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Center content */
+  gap: 10px; /* Space between input and buttons */
+  width: 100%; /* Allow it to take full width */
   margin-left: 100px;
 }
 
@@ -367,161 +438,97 @@ nav ul li a:hover {
   display: flex;
   align-items: center;
   gap: 10px;
-  flex-grow: 1;
+  flex-grow: 1; /* Let it fill available space */
 }
 
+
+/* Input Styling */
 .search-container input[type="text"] {
-  width: 250px;
-  padding: 8px 15px;
+  width: 250px; /* Make it wider */
+  padding: 8px 15px; /* Add padding for a better feel */
   font-size: 14px;
-  border: 2px solid #1fddff;
-  border-radius: 25px;
+  border: 2px solid #1fddff; /* Border matching the theme */
+  border-radius: 25px; /* Smooth rounded edges */
   outline: none;
-  transition: all 0.3s ease;
-  background: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease; /* Smooth animation on focus */
+  background: rgba(255, 255, 255, 0.8); /* Slight transparency */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
+/* Focus Effect for Search Bar */
 .search-container input[type="text"]:focus {
-  border-color: #00d0ff;
-  box-shadow: 0 4px 6px rgba(0, 208, 255, 0.3);
+  border-color: #00d0ff; /* Highlight border */
+  box-shadow: 0 4px 6px rgba(0, 208, 255, 0.3); /* Enhanced shadow */
 }
 
+/* Buttons Styling */
 .search-container button {
   padding: 8px 15px;
   font-size: 14px;
-  background: linear-gradient(135deg, #d7f8ff, #94fff4);
+  background: linear-gradient(135deg, #d7f8ff, #94fff4); /* Gradient for modern look */
   color: rgb(0, 0, 0);
   border: none;
-  border-radius: 25px;
+  border-radius: 25px; /* Match input styling */
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease; /* Smooth hover effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
+/* Button Hover Effect */
 .search-container button:hover {
-  background: linear-gradient(135deg, #008080, #00d0ff);
-  box-shadow: 0 4px 6px rgba(0, 128, 128, 0.3);
-  transform: scale(1.05);
+  background: linear-gradient(135deg, #008080, #00d0ff); /* Reverse gradient */
+  box-shadow: 0 4px 6px rgba(0, 128, 128, 0.3); /* Enhanced shadow */
+  transform: scale(1.05); /* Slight zoom effect */
 }
 
+/* Filter Options Styling */
 #filter-options {
-  display: none;
-  width: auto;
+  display: none; /* Keep it hidden by default */
+  width: auto; /* Adjust width to content */
   padding: 10px;
   margin-top: 10px;
-  border: 2px solid #1fddff;
+  border: 2px solid #1fddff; /* Matching the theme */
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  position: absolute;
-  top: 50px;
-  right: 20px;
-  z-index: 1000;
+  background: rgba(255, 255, 255, 0.9); /* Transparent background */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  position: absolute; /* Position it relative to the search bar */
+  top: 50px; /* Adjust dropdown placement */
+  right: 20px; /* Align to the right */
+  z-index: 1000; /* Ensure it appears above other content */
 }
 
+/* Filter Checkboxes Styling */
 #filter-options label {
   font-size: 14px;
-  color: #333;
+  color: #333; /* Neutral text color */
   display: block;
   align-items: center;
   cursor: pointer;
 }
 
+/* Submit Button in Filter Options */
 #filter-options button[type="submit"] {
   padding: 8px 15px;
   font-size: 14px;
-  background: linear-gradient(135deg, #d7f8ff, #94fff4);
+  background: linear-gradient(135deg, #d7f8ff, #94fff4); /* Gradient for modern look */
   color: rgb(0, 0, 0);
   border: none;
-  border-radius: 25px;
+  border-radius: 25px; /* Match input styling */
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease; /* Smooth hover effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
+/* Submit Button Hover Effect */
 #filter-options button[type="submit"]:hover {
-  background: linear-gradient(135deg, #008080, #00d0ff);
-  box-shadow: 0 4px 6px rgba(0, 128, 128, 0.3);
-  transform: scale(1.05);
-}
-
-/* Mobile and Tablet responsiveness */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    padding: 15px;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
-  }
-
-  .side-nav {
-    width: 100%;
-    justify-content: space-between;
-    margin-top: 10px;
-  }
-
-  .search-container {
-    margin-left: 0;
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .search-container form {
-    width: 100%;
-  }
-
-  .search-container input[type="text"] {
-    width: 100%;
-  }
-
-  .search-container button {
-    width: 100%;
-  }
-
-  #filter-options {
-    right: 10px;
-    top: 20px;
-  }
-}
-
-/* Mobile View */
-@media (max-width: 480px) {
-  nav ul {
-    font-size: 14px;
-  }
-
-  .search-container input[type="text"] {
-    width: 80%;
-  }
-
-  .search-container button {
-    width: 80%;
-  }
-
-  .side-nav {
-    width: 100%;
-    margin-top: 10px;
-    gap: 5px;
-  }
-}
-
-.side-nav button {
-  background: linear-gradient(135deg, #d7f8ff, #94fff4);
-  color: rgb(0, 0, 0);
-  padding: 8px 15px;
-  border-radius: 25px;
-  font-size: 14px;
-  border: none;
-  cursor: pointer;
+  background: linear-gradient(135deg, #008080, #00d0ff); /* Reverse gradient */
+  box-shadow: 0 4px 6px rgba(0, 128, 128, 0.3); /* Enhanced shadow */
+  transform: scale(1.05); /* Slight zoom effect */
 }
 
 
 /* -------------------------------------------------WELCOME--------------------------------- */
+
 #welcome-message {
   font-family: 'Arial', sans-serif; /* Font family */
   font-size: 2em; /* Slightly smaller font size */
@@ -535,10 +542,10 @@ nav ul li a:hover {
   margin-top: 30px; /* Space from the top */
   text-transform: uppercase; /* Uppercase the text */
   letter-spacing: 1px; /* Slightly spaced letters */
-  overflow: hidden; /* Ensures no extra overflow while typing */
-  white-space: nowrap; /* Prevent wrapping of the text */
-  width: fit-content; /* Adjust width dynamically */
 }
+
+
+
 
 .typing {
   border-right: 2px solid #00d0ff; /* Create cursor effect */
@@ -559,7 +566,6 @@ nav ul li a:hover {
       border-color: transparent; /* Blink effect for the typing cursor */
   }
 }
-
 
 /* ---------------------------------------------------------LOGO--------------------------------------------- */
 nav .logo {
