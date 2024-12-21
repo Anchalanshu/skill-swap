@@ -353,7 +353,7 @@ nav ul li a:hover {
 
 .dropdown-content {
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: rgb(0, 109, 91) !important;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -411,7 +411,7 @@ nav ul li a:hover {
 .dropdown-content a {
     display: block; /* Block display for dropdown links */
     padding: 10px; /* Padding for dropdown items */
-    color: black; /* Text color */
+    color: rgb(255, 255, 255); /* Text color */
     text-decoration: none; /* Remove underline */
 }
 
@@ -430,7 +430,7 @@ nav ul li a:hover {
   align-items: center; /* Vertically center content */
   justify-content: center; /* Center content */
   gap: 10px; /* Space between input and buttons */
-  width: 100%; /* Allow it to take full width */
+  /* width: 100%; Allow it to take full width */
   margin-left: 100px;
 }
 
@@ -1150,3 +1150,542 @@ nav .logo {
   }
   
   
+
+  /* -----------------------------------------------------------------------------------COLLABORATION PAGE ----------------------------------------------------------------------*/
+
+  /*---------------------------------------------------------------------- NAV NOTIFICATION BELL----------------------------------------------------------------------*/
+
+/* General Styles for Icon Buttons */
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: 20px;
+  color: #333;
+}
+
+.icon-button:hover {
+  color: #007BFF;
+}
+
+/* Dropdown Content */
+.dropdown-content {
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 250px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.dropdown-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-content ul li {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Style for Notification Links */
+.dropdown-content ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  flex-grow: 1;
+}
+
+.dropdown-content ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Styled Buttons */
+.styled-button1 {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.styled-button1:hover {
+  background-color: #0056b3;
+}
+
+/* Adjustments for Notification Layout */
+.notification {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.notification:last-child {
+  border-bottom: none;
+}
+
+.notification img.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.notification-details {
+  flex-grow: 1;
+}
+
+.notification-details p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.notification-details .time-ago {
+  color: #888;
+  font-size: 12px;
+}
+
+/* Buttons Inside Notifications */
+.notification-buttons {
+  margin-top: 5px;
+  width: 100%;
+  display: flex;
+}
+
+.notification-buttons button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 8px;
+  font-size: 12px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.notification-buttons button:hover {
+  background-color: #0056b3;
+}
+
+/* Side Navigation Styles */
+.side-nav1 {
+  display: flex;
+  align-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+}
+
+/* Adjusted Spacing for Buttons */
+/* .button-container2 {
+  margin-left: 49%;
+} */
+
+.button-container1{
+  margin-left: 10px;
+}
+
+/* Ensure Notification Dropdown Toggles Properly */
+#notification-menu,
+#dropdown-menu {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+
+/* Container for Bell Icon */
+.notification-bell {
+  position: relative;
+  display: inline-block;
+}
+
+/* Styling for Bell Icon */
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #333;
+  position: relative;
+}
+
+.icon-button:hover {
+  color: #007BFF;
+}
+
+/* Notification Badge */
+.notification-badge {
+  position: absolute;
+  top: -11px;
+  right: -12px;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 1px 7px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+
+.styled-button2{
+  padding: 8px 15px;
+  font-size: 14px;
+  background: linear-gradient(135deg, #e7fbff, #a70101);
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ------------------------------------------------------HERO---------------------------- */
+
+.hero {
+  background: #f1f1f1;
+  padding: 50px 0;
+  width: 100%;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  background-color: #007BFF;
+  color: white;
+  padding: 12px 30px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cta-button:hover {
+  background-color: #0056b3;
+}
+
+
+/* FEATURES */
+
+.features {
+  background: #ffffff;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.features h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.features-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.feature-card {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card i {
+  font-size: 3rem;
+  color: #007BFF;
+  margin-bottom: 20px;
+}
+
+.feature-card h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+
+/* POPULAR */
+
+.projects {
+  background: #f0fffb;
+  padding: 50px 20px;
+  width: 100%;
+  height: 600px;
+  text-align: center;
+}
+
+.projects h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.projects-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+.project-card {
+  background-color: #c4fff1;
+  padding: 20px;
+  width: 300px;
+  height: 70%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for smooth effect */
+}
+
+.project-card:hover {
+  transform: scale(1.05); /* Slightly increase size */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhance shadow for emphasis */
+}
+
+
+.project-card img {
+  width: 100%;
+  height: 150px; /* Set a fixed height for uniformity */
+  object-fit: cover; /* Ensures the image fills the container proportionally */
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+
+.project-card h3 {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.project-card-buttons{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+
+/* USERSS */
+
+.testimonials {
+  background: #fff;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.testimonial-card {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  display: inline-block;
+}
+
+.testimonial-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.testimonial-card h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.testimonial-card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.call-to-action {
+  background: #007BFF;
+  color: white;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.call-to-action h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.call-to-action button {
+  background-color: #ffffff;
+  color: #007BFF;
+  padding: 12px 30px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.call-to-action button:hover {
+  background-color: #f1f1f1;
+}
+
+
+.collaboration {
+  background-image: url(../images/hero.png);
+  background-size: cover;
+  padding: 50px 20px;
+  text-align: center;
+  height: 500px;
+  width: 100%;
+}
+
+.collaboration-header h1 {
+  font-size: 4rem;
+  color: #fffafa;
+  margin-bottom: 10px;
+}
+
+.collaboration-header p {
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+.collaboration-actions {
+  display: flex;
+  margin-top: 6%;
+  justify-content: space-evenly;
+  /* align-items: center;
+  margin-bottom: 10%; */
+}
+
+.styled-button3{
+  padding: 8px 15px;
+  font-size: 14px;
+  background: linear-gradient(135deg, #d7f8ff, #94fff4); /* Gradient for modern look */
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 25px; /* Match input styling */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth hover effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.styled-button3:hover {
+  background: linear-gradient(135deg, #008080, #00d0ff); /* Reverse gradient */
+  box-shadow: 0 4px 6px rgba(0, 128, 128, 0.3); /* Enhanced shadow */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+.repo-section {
+  /* display: none; */
+  margin-top: 30px;
+  text-align: left;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.repo-section h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+#create-repo-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+#create-repo-form input,
+#create-repo-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#upload-files {
+  margin-bottom: 15px;
+}
+
+.repo-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.repo-item {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.repo-item h3 {
+  font-size: 1.2rem;
+  color: #007BFF;
+  margin-bottom: 10px;
+}
+
+.repo-item p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.hidden {
+  display: none;
+}
