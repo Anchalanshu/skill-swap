@@ -281,6 +281,11 @@ body {
     gap: 20px;
   }
   
+  .card-price{
+    background: #b5f4ff; width: 100px; font-weight: 700; display: flex ; justify-content: center; 
+  }
+
+
   :is(.popular, .blog) .card-title {
     color: var(--granite-gray);
     font-size: var(--fs-5);
@@ -1018,3 +1023,130 @@ nav .logo {
   }
 
 
+  /* ---------------------------------------------------FOOTER---------------------------------------------- */
+  footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+  }
+  
+  footer .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+  }
+  
+  footer .social-icon img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  footer .social-icon img:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  
+  footer .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    width: 200px;
+  }
+  
+  footer .dropdown-menu.show {
+    display: block;
+  }
+  
+  footer .dropdown-item {
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  footer .dropdown-item:hover {
+    background-color: #f8f9fa;
+  }
+  
+
+  /*-------------------------SPECIAL THANKS------------------------------------------*/
+
+  footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+  }
+  
+  footer .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+  }
+  
+  footer .social-icon img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  footer .social-icon img:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  
+  footer .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    width: 200px;
+  }
+  
+  footer .dropdown-menu.show {
+    display: block;
+  }
+  
+  footer .dropdown-item {
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  footer .dropdown-item:hover {
+    background-color: #f8f9fa;
+  }
+
+
+
+  
+  footer .special-thanks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Adds space between the logo and text */
+  }
+  
+  footer .special-thanks img {
+    width: 25px;
+    height: 25px;
+  }
+  
+  footer .special-thanks span {
+    font-size: 14px;
+  }
+  
+  footer .special-thanks a {
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  footer .special-thanks a:hover {
+    text-decoration: underline;
+  }
+  
+  

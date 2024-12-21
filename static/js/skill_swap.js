@@ -185,3 +185,12 @@ function toggleJoinText(button) {
     button.innerText = 'View Project';
     button.classList.add('clicked');
 }
+
+  // This ensures the dropdown works as expected if not using Bootstrap's JS.
+  document.getElementById('emailDropdown').addEventListener('click', function (e) {
+    var dropdownMenu = e.target.nextElementSibling;
+    dropdownMenu.classList.toggle('show');
+  });
+
+
+
