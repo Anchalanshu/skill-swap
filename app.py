@@ -1,13 +1,12 @@
 from flask import Flask, render_template, request, redirect
 from werkzeug.security import generate_password_hash, check_password_hash  # For hashing passwords
 import mysql.connector
-from dotenv import load_dotenv
 import os
 import bcrypt
 from urllib.parse import urlparse
 
 # Load environment variables from .env file
-load_dotenv()
+# load_dotenv()
 
 app = Flask(__name__)
 
@@ -34,25 +33,19 @@ def test_db():
 
 
 # Parse the DATABASE_URL environment variable
-db_url = os.getenv("DATABASE_URL")
-if not db_url:
-    raise ValueError("DATABASE_URL environment variable is not set!")
+# db_url = os.getenv("DATABASE_URL")
+# if not db_url:
+#     raise ValueError("DATABASE_URL environment variable is not set!")
 
-parsed_url = urlparse(db_url)
+# parsed_url = urlparse(db_url)
 
 # Extract database connection details
-db_config = {
-    "host": parsed_url.hostname,
-    "user": parsed_url.username,
-    "password": parsed_url.password,
-    "database": parsed_url.path[1:],  # Remove leading '/'
-    "port": parsed_url.port or 3306,  # Default to 3306 if port is not specified
-}
+
 
 # Establish database connection
-conn = mysql.connector.connect(**db_config)
+# conn = mysql.connector.connect(**db_config)
 
-cursor = conn.cursor()
+# cursor = conn.cursor()
 
 
 
